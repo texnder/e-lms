@@ -1,0 +1,40 @@
+{
+	"name": "texnder/texnder",
+	"description": "texnder is a light and fast php framework",
+    "type": "project",
+    "keywords": ["texnder", "mvc-framework", "light and fast framework"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Inderjeet",
+            "email": "inderjeetchohana1431996@gmail.com"
+        }
+    ],
+
+    "minimum-stability": "dev",
+
+    "require": {
+        "texnder/routex": "^1.0",
+        "texnder/bootex": "^1.0",
+        "texnder/sessnex": "^0.07.0"
+    },
+
+    "autoload": {
+        "classmap":[
+            "vendor/middelware",
+            "database"
+        ],
+
+		"psr-4": {
+            "connection\\": "vendor/database",
+			"App\\": "app"
+		},
+
+		"files":[
+            "functions.php",
+			"routes/web.php"
+		]
+
+	}
+
+}
