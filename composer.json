@@ -1,8 +1,8 @@
 {
-	"name": "texnder/texnder",
-	"description": "texnder is a light and fast php framework",
+	"name": "texnder/e-lms",
+	"description": "e-loan-management-system",
     "type": "project",
-    "keywords": ["texnder", "mvc-framework", "light and fast framework"],
+    "keywords": ["e-lms", "e-loan-management-system", "e loan management system"],
     "license": "MIT",
     "authors": [
         {
@@ -11,7 +11,7 @@
         }
     ],
 
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
 
     "require": {
         "texnder/routex": "^1.0",
