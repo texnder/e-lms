@@ -1,6 +1,6 @@
 {
-	"name": "texnder/e-lms",
-	"description": "e-loan-management-system",
+    "name": "texnder/e-lms",
+    "description": "e-loan-management-system",
     "type": "project",
     "keywords": ["e-lms", "e-loan-management-system", "e loan management system"],
     "license": "MIT",
@@ -13,28 +13,22 @@
 
     "minimum-stability": "stable",
 
-    "require": {
-        "texnder/routex": "^1.0",
-        "texnder/bootex": "^1.0",
-        "texnder/sessnex": "^0.07.0"
-    },
-
     "autoload": {
         "classmap":[
             "vendor/middelware",
             "database"
         ],
 
-		"psr-4": {
+        "psr-4": {
             "connection\\": "vendor/database",
-			"App\\": "app"
-		},
+            "App\\": "app"
+        },
 
-		"files":[
+        "files":[
             "functions.php",
-			"routes/web.php"
-		]
+            "routes/web.php"
+        ]
 
-	}
+    }
 
 }
