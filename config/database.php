@@ -20,12 +20,14 @@ return [
 
 	"driver" => "mysql",
 
-	"host" => "localhost",
+	"host" => "db",
 
 	"user" => "root",
 
-	"password" => "",
+	"password" => "example",
 
-	"schema" => "redCarpet",
+	"schema" => "",
+
+	"port" => "3306"
 
 ];

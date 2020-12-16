@@ -53,7 +53,7 @@ class connection
 			if(!empty($db['host']) && !empty($db['user'])){
 				
 			   $this->conn = new PDO(
-			   	"{$db['driver']}:host={$db['host']};dbname={$db['schema']}",
+			   	"{$db['driver']}:host={$db['host']};port={$db['port']};dbname={$db['schema']}",
 			   	$db['user'],
 			   	$db['password']
 			   );

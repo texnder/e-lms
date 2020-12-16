@@ -1,6 +1,6 @@
 # e-Loan Management system
 
-	the project requirements is: PHP(>= 5.6.*), mySql(>=4.7.9)
+	the project requirements is: PHP, mySql
 
 In this project [texnder](http://texnder.com/) components are used for routing, dependency Injection, and sessions.. 
 
@@ -10,50 +10,46 @@ all components are design and develope by
 	 "Email" : "inderjeetchohana1431996@gmail.com" 
 }
 
-## Installation
+## Setting Up
 
-This project is uses texnder components so many configration is already done. project needs to connect with database. so configure database credential according to your system. 
+create docker container using this cmd: "docker-compose up -d"
+open your browser and go to localhost. you should get landing page.
 
-go to: 
-	config/database.php
+if error throw:
 
-once you provide database details. put whole project into your servers public/public_html directory. or if you are on local computer just change your server path to this project. if you are using 'Xampp' server in your computer you can change it by
+Error Message: SQLSTATE[HY000] [2002] Connection refused
+Error Code: 2002
 
-go to:
-	C:\xampp\apache\conf\extra\httpd-vhosts.conf
+++ go to : config/database.php ++
+and change the port number 3306 to 8080. In windows, mysql uses 3306 port. wait if you are window user and still show same error. check mysql log: 
 
-you can google if any doubt how to change root directory or create virtual host..
+[System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.22' socket: '/var/run/mysqld/mysqld.sock' port: 3306 MySQL Community Server - GPL.
 
-NOTE: remember without setting virtual host. '.htaccess' could not redirect http requests to public folder and you'll get error.
+wait till this message occurs on log.. than refresh your page.. which is on localhost i'm assuming..everything will work well after that.. 
 
-Once, you'll set virual host you are done. you'll get index page by simply going to your [localhost](http://127.0.0.1).
+=>step-1 :create database in mysql
 
-## create tables
+go to: http://localhost:8080 , and use database="db" username="root" password="example" to login mysql using Adminer UI
 
-you can create tables manualy or use project link, once you successfully get home page in your system screen. 
+The project uses database for crud oprations. here, we are using mysql, and to make project functional we need to create a database.
 
-so, To create database tables
-	
-go to the link: (http://yourhost.com/migrate-tables-in-database)
+=>step-2 :update database configuration file
 
-or 
+go to: config/database.php and update database name you created. if you are on linux os change db port to 8080 if connection refused.
 
-go to:
-	database/migrations.php  => check this file to create tables in database accordingly.
+=>step-3 :migrate tables in database
 
-once table created for application in database. you can remove this url by going to: 'routes/web.php' (in this file all routes are defined for the project) or you can left it as it is there is no issue in that i've code everything in that way.
+To migrate tables in database go to: (http://localhost/migrate-tables-in-database)
+here localhost could be replace by your domain name. if you are not on local machine.
 
-if you've worked in laravel before. you'll understand everthing. otherwise delete this code: 'Route::get('/migrate-tables-in-database', "App\controllers\adminController@migrate");'
+=> step-4 : admin register by clicking sign up on login page
 
-
-here we are using texnder components not any well known php framework like laravel and cake php. so we need to migrate database manualy or by link. because still i'm working on database migration part. soon i'll release database component too on [my server](http://texnder.com/). than, we'll able to do it by command prompt.
-
-Texnder framework uses laravel syntax style thats why it's very easy to understand. here i've not copied any code or used laravel components. it's all coded by me. I've just created similar syntax style to understand easly, for any other coders.
+to perform crud oprations on upcoming requests applications register first admin. and than admin can register agents.
 
 
 ## Controllers
 
-all controllers of the application in app/controllers/..
+all controllers of the application is in app/controllers/..
 
 ## views
 
